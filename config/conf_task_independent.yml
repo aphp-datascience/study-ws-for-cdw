@@ -1,0 +1,58 @@
+data_selection:
+    path_train_labels: ${label_model.path_save_labels_train}
+    task_ids: 
+        - 1
+        - 7
+        - 4
+        - 5
+        - 8
+        - 13
+        - 14
+        - 15
+        - 19
+        - 22
+    path_docs_train: ${retrieve_external_knowledge.path_cohort}
+    prob_thresholds: (0.5, 0.5)
+    negative_on_positive_ratio: 4
+    strategy: "subsampling"
+    max_number_of_positive_examples: 1000
+    sampling_params:
+        scale: 150
+        use_only_notes_with_positive_examples: False
+        use_weight: True
+    path_train_dataset: "~/wedsak/data/dataset/train/task_independent/"
+    
+        
+train:
+    model_name: None
+    path_evaluation_dataset: "/export/home/cse250022/wedsak/data/annotation/dev/docs"
+    batch_size: 32
+    task_ids: ${data_selection.task_ids}
+    max_steps: 400
+    context_getter: "words[-150:300]"
+    warmup_rate: 0.1
+    path_to_training_datasets: "~/wedsak/data/dataset/train/task_independent/"
+    lr_transformer: 1e-4
+    lr_span_classifier: 5e-5
+    path_embedding: "almanach/camembertav2-base" 
+    use_lrt: False
+    initial_delta_lrt: 4
+    last_delta_lrt: 5
+    step_min_lrt: 130
+    step_max_lrt: 300
+    path_dir_save_model: "~/wedsak/data/models/"
+    save_corrected_targets: False
+    embedding_params:
+        window: 2048
+        stride: 1024
+    dropout_span_classifier: 0
+    # shuffle: "fragment"
+    
+
+
+    
+    
+
+    
+
+

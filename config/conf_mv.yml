@@ -1,0 +1,44 @@
+label_model:
+    fillnone_as_negative: False
+    abstention_value: -1
+    negative_value: 0
+    positive_value: 1
+    label_model_protocol:
+        "@label_model": "MajorityVoteLabelModel"
+    path_save_labels_train: "~/wedsak/data/dataset/train/labels_mv_train_task_{task_id}.pickle"
+    path_metrics_label_model: "~/wedsak/data/label_model_metrics_mv/"
+    fillnone_as_negative: False
+    min_support_dev: 1
+
+data_selection:
+    path_train_labels: ${label_model.path_save_labels_train}
+    task_ids: ${general.task_ids}
+    path_docs_train: ${retrieve_external_knowledge.path_cohort}
+    strategy: "one_dataset_for_all_tasks"
+    path_train_dataset: "~/wedsak/data/dataset/train/all_tasks_mv/"
+    
+train:
+    model_name: "all_tasks_mv"
+    path_evaluation_dataset: "/export/home/cse250022/wedsak/data/annotation/dev/docs"
+    batch_size: 32
+    task_ids: ${general.task_ids}
+    max_steps: 1000
+    context_getter: "words[-150:300]"
+    warmup_rate: 0.1
+    path_to_training_datasets: 
+        # - "/export/home/cse250022/wedsak/data/annotation/dev/docs"
+        - ${data_selection.path_train_dataset}
+    lr_transformer: 1e-4
+    lr_span_classifier: 5e-5
+    path_embedding: "almanach/camembertav2-base" # "almanach/moderncamembert-base" # "almanach/camembertav2-base" # "camembert/camembert-large"
+    use_lrt: False
+    initial_delta_lrt: 4
+    last_delta_lrt: 5
+    step_min_lrt: 130
+    step_max_lrt: 300
+    path_dir_save_model: "~/wedsak/data/models/"
+    save_corrected_targets: False
+    embedding_params:
+        window: 2048
+        stride: 1024
+    dropout_span_classifier: 0

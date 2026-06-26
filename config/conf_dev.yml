@@ -1,0 +1,27 @@
+retrieve_external_knowledge:
+    path_cohort: "~/wedsak/data/annotation/dev/sample_annotated_group_1.pickle"
+    path_save_ek: "~/wedsak/data/dataset/dev/ek_dev.pickle"
+    path_codes_definition: ${general.path_codes_definition}
+    db: "cse250022_20260206_143905937275"
+
+lf_no_llm:
+    path_notes: ${retrieve_external_knowledge.path_cohort}
+    path_external_knowledge: ${retrieve_external_knowledge.path_save_ek}
+    path_patterns_contextual_qualifier: ${general.path_patterns_contextual_qualifier}
+    path_logical_relation_qualifier: ${general.path_logical_relations}
+    path_save_votes: "~/wedsak/data/dataset/dev/votes_no_llm.pickle"
+
+llm_lf:
+    task_ids: ${general.task_ids}
+    path_notes: ${retrieve_external_knowledge.path_cohort}
+    path_prompts: ${general.path_prompts}
+    path_save_votes: "~/wedsak/data/dataset/dev/votes_llm.pickle"
+    context_getter: ${general.context_getter}
+
+    
+merge_lf_results:
+    lf_path_results: 
+    - ${lf_no_llm.path_save_votes} 
+    - ${llm_lf.path_save_votes}
+    path_save_votes: "~/wedsak/data/dataset/dev/votes.pickle"
+    

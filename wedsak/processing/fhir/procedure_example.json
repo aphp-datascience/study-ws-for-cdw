@@ -1,0 +1,49 @@
+{
+    "resourceType": "Procedure",
+    "id": null,
+    "status": "completed",
+    "code": {
+        "coding": [
+            {
+                "system": "https://www.snomed.org/",
+                "code": "113091000",
+                "display": "Magnetic resonance imaging (procedure)"
+            }
+        ]
+    },
+    "subject": {
+        "reference": "Patient/123",
+        "reference_id": 123
+    },
+    "performedDateTime": "2026-02-27",
+    "meta": {
+        "security": [
+            {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
+                "code": "AIAST",
+                "display": "Artificial Intelligence asserted"
+            }
+        ],
+        "source": null
+    },
+    "encounter": null,
+    "extension_nlp": [
+        {
+            "id": null,
+            "related_span": null,
+            "document_reference": {
+                "reference": "DocumentReference/456",
+                "reference_id": 456
+            },
+            "model_confidence": 0.95,
+            "text_evidence": "27 février 2026",
+            "span_text": null,
+            "span_start": 350,
+            "span_end": 365,
+            "attributes": {
+                "negation": false
+            },
+            "span_label": null
+        }
+    ]
+}

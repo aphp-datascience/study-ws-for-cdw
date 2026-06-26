@@ -1,0 +1,28 @@
+evaluate:
+    model_path: '/export/home/cse250022/wedsak/data/models/all_tasks_on_medgemma'
+    dataset_path: '/export/home/cse250022/wedsak/data/annotation/test/docs_group_B_0_49_AC'
+    
+llm_lf:
+    task_ids: ${general.task_ids}
+    path_notes: "/export/home/cse250022/wedsak/data/annotation/test/test_set_AB_0-99.pickle"
+    path_prompts: ${general.path_prompts}
+    path_save_votes: "~/wedsak/data/dataset/test/votes_llm_medgemma.pickle"
+    context_getter: ${general.context_getter}
+    model_names:
+        "google/medgemma-27b-text-it": "http://localhost:8003/v1"
+        # "Qwen/Qwen3-8B": "http://localhost:8002/v1"
+
+evaluate_all:       
+    path_model_refs: '/export/home/cse250022/wedsak/data/model_refs.xlsx'
+    path_dataset_A: '/export/home/cse250022/wedsak/data/annotation/test/docs_group_A_AC' 
+    path_dataset_B: '/export/home/cse250022/wedsak/data/annotation/test/docs_group_B_AC'
+    types_to_evaluate:
+        - "rule_based"
+        # - "llm"
+        
+python scripts/metrics_table.py --path-model-refs /export/home/cse250022/wedsak/data/LF_definition.xlsx --path-base-metrics ~/wedsak/logs/evaluation --metric fscore --output-csv-path ~/wedsak/logs/evaluation/metrics_table.csv
+
+metrics_table:
+    path_model_refs: '/export/home/cse250022/wedsak/data/model_refs.xlsx'
+    metric: "fscore"
+    output_csv_path: "~/wedsak/logs/evaluation/table1.csv"

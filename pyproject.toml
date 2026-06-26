@@ -1,0 +1,78 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wedsak"
+version = "0.1.1"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "pandas>=2.2.3,<3.0.0",
+    "matplotlib>=3.10.0,<4.0.0",
+    "seaborn>=0.13.2,<0.14.0",
+    "pyspark==2.4.3.post5",
+    "pyarrow>=19.0.0,<20.0.0",
+    "ipykernel>=6.29.5,<7.0.0",
+    "jupyter-black>=0.4.0,<0.5.0",
+    "openpyxl>=3.1.5,<4.0.0",
+    "httpx>=0.28.1,<0.29.0",
+    "edsnlp[ml]",
+    "ipywidgets>=8.1.6",
+    "flyingsquid>=0.0.0a0",
+    "pgmpy>=1.0.0",
+    "pyvis>=0.3.2",
+    "tensorboardx>=2.6.2.2",
+    "snorkel-metal",
+    "pip>=25.1.1",
+    "markupsafe==3.0.2",
+    "openai>=1.90.0",
+    "torch==2.6",
+    "flashinfer-python>=0.2.5",
+    "transformers==4.56.1",
+    "bitsandbytes>=0.47.0",
+    "hyperlm>=0.0.5",
+    "confit>=0.10.0",
+    "bm25s>=0.2.14",
+    "werkzeug<3.0.0",
+    "metanno==1.0.0b7",
+    "pulp[cbc]>=3.3.0",
+    "polars>=1.40.0",
+    "statsmodels>=0.14.4",
+]
+
+[project.optional-dependencies]
+hpc = [
+    "slurm-kernel","edstoolbox"
+]
+
+[tool.uv.sources]
+flyingsquid = { git = "https://github.com/aricohen93/flyingsquid.git" }
+snorkel-metal = { git = "https://github.com/aricohen93/metal.git"}
+slurm-kernel = { git = "https://gitlab.eds.aphp.fr/entrep-t-de-donn-es-de-sant/eds-tools/datasciencetools/slurm-kernel.git" }
+hyperlm = { git = "https://github.com/aricohen93/hyper_label_model.git"}
+pyspark = { index = "pyspark" }
+edstoolbox = {git = "https://gitlab.eds.aphp.fr/entrep-t-de-donn-es-de-sant/eds-tools/datasciencetools/eds-toolbox.git" }
+edsnlp = { git = "https://github.com/aphp/edsnlp.git", branch = "wedsak_1" }
+
+[[tool.uv.index]]
+name = "pyspark"
+url = "https://gitlab.eds.aphp.fr/api/v4/projects/2378/packages/pypi/simple"
+
+
+[tool.setuptools.packages.find]
+include = ["wedsak"]
+
+[project.entry-points."wedsak_registry_loss"]
+"NCEandRCE"  = "wedsak.training.loss:NCEandRCE"
+"NGCEandMAE"  = "wedsak.training.loss:NGCEandMAE"
+"NormalizedGeneralizedCrossEntropy"  = "wedsak.training.loss:NormalizedGeneralizedCrossEntropy"
+"ANL_CE"  = "wedsak.training.loss:ANL_CE"
+
+[project.entry-points."wedsak_registry_label_model"]
+"MetalLabelModel" = "wedsak.label_model.metal:MetalLabelModelWrapper"
+"HyperLabelModel" = "wedsak.label_model.hyper_label:HyperLabelModelWrapper"
+"MajorityVoteLabelModel" = "wedsak.label_model.majority_vote:MajorityVoteLabelModel"
+
+

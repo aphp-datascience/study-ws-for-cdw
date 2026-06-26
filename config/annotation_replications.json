@@ -1,0 +1,43 @@
+{"replications" : [
+    {
+        "to_replace": [
+            "TEP scan"
+        ],
+        "to_add": "Imagerie de médecine nucléaire"
+    },
+    {
+        "to_replace": [
+            "TEP scan",
+            "TDM TAP (CT-scan)",
+            "Échographie",
+            "IRM",
+            "Mammographie",
+            "Radiographie simple",
+            "Imagerie de médecine nucléaire"
+        ],
+        "to_add": "Imagerie médicale"
+    },
+    {
+        "to_replace": [
+            "Coloscopie",
+            "Endoscopie digestive haute"
+        ],
+        "to_add": "Endoscopie digestive"
+    },
+    {
+        "to_replace": [
+            "Endoscopie digestive",
+            "Endoscopie digestive haute",
+            "Coloscopie",
+            "Fibroscopie bronchique"
+        ],
+        "to_add": "Endoscopie"
+    },
+    {
+        "to_replace": [
+            "Biopsie"
+        ],
+        "to_add": "Examen anatomopathologique"
+    }
+]
+}

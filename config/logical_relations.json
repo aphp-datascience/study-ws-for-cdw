@@ -1,0 +1,97 @@
+[
+  {
+    "name": "logical_lf1",
+    "task_name": "Biopsy (procedure)",
+    "value_out": true,
+    "lf_in": {
+      "lf_regex_6": "Fiberoptic bronchoscopy (procedure)",
+      "lf_regex_14": "Anatomic pathology procedure (procedure)"
+    },
+    "relation": "lf_regex_6 and lf_regex_14"
+  },
+  {
+    "name": "logical_lf5",
+    "task_name": "Biopsy (procedure)",
+    "value_out": true,
+    "lf_in": {
+      "lf_regex_14": "Anatomic pathology procedure (procedure)",
+      "lf_regex_7": "Esophagogastroduodenoscopy (procedure)"
+    },
+    "relation": "lf_regex_14 and lf_regex_7"
+  },
+  {
+    "name": "logical_lf6",
+    "task_name": "Biopsy (procedure)",
+    "value_out": true,
+    "lf_in": {
+      "lf_regex_14": "Anatomic pathology procedure (procedure)",
+      "lf_regex_8": "Colonoscopy (procedure)"
+    },
+    "relation": "lf_regex_14 and lf_regex_8"
+  },
+  {
+    "name": "logical_lf13",
+    "task_name": "Imaging (procedure)",
+    "value_out": true,
+    "lf_in": {
+      "lf_regex_1": "Positron emission tomography (procedure)",
+      "lf_regex_18": "Nuclear medicine imaging procedure (procedure)",
+      "lf_regex_3": "Computed tomography (procedure)",
+      "lf_regex_5": "Magnetic resonance imaging (procedure)",
+      "lf_regex_4": "Ultrasonography (procedure)",
+      "lf_regex_16": "Mammography (procedure)",
+      "lf_regex_17": "Plain X-ray (procedure)"
+    },
+    "relation": "lf_regex_1 or lf_regex_18 or lf_regex_3 or lf_regex_4 or lf_regex_5 or lf_regex_16 or lf_regex_17"
+  },
+  {
+    "name": "logical_lf15",
+    "task_name": "Anatomic pathology procedure (procedure)",
+    "value_out": true,
+    "lf_in": {
+      "lf_regex_10": "Biopsy (procedure)"
+    },
+    "relation": "lf_regex_10"
+  },
+  {
+    "name": "logical_lf17",
+    "task_name": "Nuclear medicine imaging procedure (procedure)",
+    "value_out": true,
+    "lf_in": {
+      "lf_regex_1": "Positron emission tomography (procedure)"
+    },
+    "relation": "lf_regex_1"
+  },
+  {
+    "name": "logical_lf18",
+    "task_name": "Endoscopy (procedure)",
+    "value_out": true,
+    "lf_in": {
+      "lf_regex_6": "Fiberoptic bronchoscopy (procedure)",
+      "lf_regex_7": "Esophagogastroduodenoscopy (procedure)",
+      "lf_regex_8": "Colonoscopy (procedure)",
+      "lf_regex_20": "Gastrointestinal tract endoscopy (procedure)"
+    },
+    "relation": "lf_regex_6 or lf_regex_7 or lf_regex_8 or lf_regex_20"
+  },
+  {
+    "name": "logical_lf19",
+    "task_name": "Biopsy (procedure)",
+    "value_out": true,
+    "lf_in": {
+      "lf_regex_14": "Anatomic pathology procedure (procedure)",
+      "logical_lf18": "Endoscopy (procedure)"
+    },
+    "relation": "lf_regex_14 and logical_lf18"
+  },
+  {
+    "name": "logical_lf20",
+    "task_name": "Gastrointestinal tract endoscopy (procedure)",
+    "value_out": true,
+    "lf_in": {
+      "lf_regex_7": "Esophagogastroduodenoscopy (procedure)",
+      "lf_regex_8": "Colonoscopy (procedure)"
+    },
+    "relation": "lf_regex_7 or lf_regex_8"
+  }
+]

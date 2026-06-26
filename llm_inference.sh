@@ -1,0 +1,3 @@
+python scripts/apply_llm_lf.py --config config/conf_general.yml --config config/conf_train.yml --path-notes "~/wedsak/data/dataset/train/train_notes_1.pickle" --path-save-votes "~/wedsak/data/dataset/train/conf_train/votes_llm_1.pickle"
+python scripts/apply_llm_lf.py --config config/conf_general.yml --config config/conf_train.yml --path-notes "~/wedsak/data/dataset/train/train_notes_2.pickle" --path-save-votes "~/wedsak/data/dataset/train/conf_train/votes_llm_2.pickle"
+python scripts/apply_llm_lf.py --config config/conf_general.yml --config config/conf_train.yml --path-notes "~/wedsak/data/dataset/train/train_notes_3.pickle" --path-save-votes "~/wedsak/data/dataset/train/conf_train/votes_llm_3.pickle"

@@ -1,0 +1,998 @@
+{
+    "Positron emission tomography (procedure)": {
+        "lf_name": "lf_regex_1",
+        "terms": {
+            "PET": [
+                "TEP",
+                "PET-TDM",
+                "Tep",
+                "pet",
+                "TEPscan",
+                "TEP-IRM"
+            ]
+        },
+        "context_sents": 1,
+        "attr": "TEXT"
+    },
+    "Enrollment in clinical trial (procedure)": {
+        "lf_name": "lf_regex_2",
+        "regex": {
+            "accord": [
+                "a donne.? .{0,10} accord",
+                "signe .{0,10} consentement",
+                "donne.? .{0,10} non-opposition"
+            ],
+            "participation": [
+                "participation a l'etude",
+                "a ete inclus le",
+                "visite screening protocole",
+                "screening",
+                "dans le protocole",
+                "inclus le",
+                "date d'inclusion"
+            ],
+            "randomisation": [
+                "ete randomise",
+                "visite randomisation",
+                "randomise dans"
+            ],
+            "autre": [
+                "inclus dans un essai",
+                "inclus dans un protocole",
+                "inclus dans une etude"
+            ]
+        },
+        "context_sents": 1,
+        "attr": "NORM"
+    },
+    "Computed tomography (procedure)": {
+        "lf_name": "lf_regex_3",
+        "terms": {
+            "PET": [
+                "TDM TAP",
+                "TAP",
+                "TAPscan"
+            ],
+            "TDM": [
+                "TDM"
+            ],
+            "scanner": [
+                "scanner",
+                "Scanner"
+            ]
+        },
+        "regex": {
+            "PET2": [
+                "(?i)scanner thoraco.abdomino.pelvien"
+            ]
+        },
+        "context_sents": 1,
+        "attr": "TEXT"
+    },
+    "Ultrasonography (procedure)": {
+        "lf_name": "lf_regex_4",
+        "terms": {
+            "echo": [
+                "echographique",
+                "echographie",
+                "echo",
+                "doppler",
+                "echo-doppler"
+            ]
+        },
+        "context_words": [
+            5,
+            5
+        ],
+        "context_sents": 1,
+        "attr": "NORM"
+    },
+    "Magnetic resonance imaging (procedure)": {
+        "lf_name": "lf_regex_5",
+        "terms": {
+            "irm": [
+                "IRM",
+                "résonance magnétique",
+                "TEP-IRM"
+            ]
+        },
+        "context_words": [
+            8,
+            10
+        ],
+        "context_sents": 1,
+        "attr": "TEXT"
+    },
+    "Fiberoptic bronchoscopy (procedure)": {
+        "lf_name": "lf_regex_6",
+        "terms": {
+            "fibroscopie": [
+                "fibroscopie bronchique",
+                "LBA",
+                "bronchoscopie",
+                "lavage broncho-alveolaire",
+                "lavage broncho alveolaire"
+            ]
+        },
+        "context_words": [
+            8,
+            10
+        ],
+        "context_sents": 1,
+        "attr": "NORM"
+    },
+    "Esophagogastroduodenoscopy (procedure)": {
+        "lf_name": "lf_regex_7",
+        "terms": {
+            "endoscopie": [
+                "endoscopie digestive haute",
+                "FOGD",
+                "fibroscopie oeso gastroduodenale",
+                "fibroscopie oeso-gastroduodenale",
+                "oesogastroduodenoscopie",
+                "gastroscopie"
+            ]
+        },
+        "context_sents": 1,
+        "attr": "NORM"
+    },
+    "Colonoscopy (procedure)": {
+        "lf_name": "lf_regex_8",
+        "terms": {
+            "coloscopie": [
+                "coloscopie",
+                "endoscopie digestive basse"
+            ],
+            "Rectosigmoidoscopie": [
+                "rectosigmoidoscopie"
+            ]
+        },
+        "context_sents": 1,
+        "attr": "NORM"
+    },
+    "Endoscopy (procedure)": {
+        "lf_name": "lf_regex_9",
+        "terms": {
+            "Laryngoscopie": [
+                "laryngoscopie"
+            ],
+            "Ur\u00e9t\u00e9roscopie": [
+                "ureteroscopie"
+            ],
+            "Arthroscopie": [
+                "arthroscopie"
+            ],
+            "Cystoscopie": [
+                "cystoscopie"
+            ],
+            "endoscopie_pharynx_trachee_oesophage": [
+                "endoscopie du pharynx",
+                "endoscopie de la trachee",
+                "endoscopie de l'oesophage"
+            ],
+            "Anuscopie": [
+                "anuscopie"
+            ]
+        },
+        "context_sents": 1,
+        "attr": "NORM",
+        "regex": {
+            "generic": [
+                "scopie\\b"
+            ]
+        }
+    },
+    "Biopsy (procedure)": {
+        "lf_name": "lf_regex_10",
+        "terms": {
+            "biopsie": [
+                "biopsies",
+                "biopsie",
+                "microbiopsie",
+                "biopsique",
+                "microbiopsies",
+                "ptt",
+                "ponction-biopsie",
+                "ponction sous scanner",
+                "bom",
+                "ponction"
+            ],
+            "Brossage": [
+                "brossage",
+                "frottis"
+            ],
+            "Cytoponction": [
+                "cytoponction",
+                "aiguille fine"
+            ]
+        },
+        "context_sents": 1,
+        "attr": "NORM"
+    },
+    "Surgical procedure (procedure)": {
+        "lf_name": "lf_regex_11",
+        "terms": {
+            "chirurgie": [
+                "exerese",
+                "opere",
+                "resection",
+                "operee",
+                "greffe",
+                "bloc chir",
+                "vagotomie",
+                "arthroscopie",
+                "reprise de berges",
+                "chirurgie",
+                "prise en charge chirurgicale",
+                "ablation"
+            ]
+        },
+        "regex": {
+            "chirurgie2": [
+                "ctomie\\b"
+            ]
+        },
+        "context_sents": 1,
+        "attr": "NORM"
+    },
+    "Radiotherapy (procedure)": {
+        "lf_name": "lf_regex_12",
+        "terms": {
+            "radioth\u00e9rapie": [
+                "radiotherapie"
+            ]
+        },
+        "context_sents": 1,
+        "attr": "NORM"
+    },
+    "Chemotherapy (procedure)": {
+        "lf_name": "lf_regex_13",
+        "terms": {
+            "chimioth\u00e9rapie": [
+                "chimiotherapie",
+                "5 fu",
+                "5-fu",
+                "cure",
+                "taxol"
+            ],
+            "drugs": [
+                "daunorubicine (en liposomes)",
+                "dacarbazine medac",
+                "doxorubicine chlorhydrate (en liposomes pegyles)",
+                "dacarbazine",
+                "epirubicin eugia",
+                "oteracil potassium",
+                "eribulin advanz pharma",
+                "paclitaxel (nanoparticules liees a l'albumine)",
+                "leustatin",
+                "farmorubicine",
+                "irinotecan",
+                "evoltra",
+                "temodal",
+                "irinotecan eugia",
+                "cladribine",
+                "pemetrexed ever pharma",
+                "carboplatine hospira",
+                "etoposide accord healthcare",
+                "doxorubicin",
+                "bendamustine chlorhydrate",
+                "temozolomide",
+                "myocet",
+                "eribulin",
+                "caelyx",
+                "idarubicin",
+                "fludarabine phosphate",
+                "emthexate",
+                "vepesid",
+                "docetaxel eugia",
+                "pemetrexed disodium",
+                "docetaxel",
+                "zolsketil",
+                "bendamustine accord",
+                "holoxan",
+                "irinotecan chlorhydrate",
+                "cabazitaxel viatris",
+                "leukeran",
+                "cytarabine",
+                "mitomycine",
+                "vinblastine teva",
+                "tomudex",
+                "decitabine",
+                "vyxeos",
+                "daunorubicine chlorhydrate",
+                "vinblastine",
+                "teysuno",
+                "busulfan",
+                "trecondi",
+                "paclitaxin",
+                "zavedos",
+                "doxorubicine chlorhydrate (en liposomes)",
+                "carboplatine",
+                "vinorelbine",
+                "dacogen",
+                "temozolomide accord",
+                "cabazitaxel",
+                "gemcitabine accord healthcare",
+                "atc absent",
+                "carboplatin accord healthcare",
+                "azacitidine mylan",
+                "myleran",
+                "paclitaxel accord healthcare",
+                "cyclophosphamide",
+                "cerubidine",
+                "capecitabine",
+                "adriblastina",
+                "clofarabine",
+                "pemetrexed accord",
+                "ifosfamide",
+                "hydrea",
+                "eribuline mesilate",
+                "azacitidine accord",
+                "levact",
+                "vidaza",
+                "eribuline baxter",
+                "pemetrexed",
+                "lanvis",
+                "tipiracil chlorhydrate",
+                "vinorelbine tartrate",
+                "halaven",
+                "mercaptopurine",
+                "lonsurf",
+                "hydroxycarbamide",
+                "vincristine",
+                "cisplatine",
+                "gemcitabin sandoz",
+                "cytarabine accord healthcare",
+                "pemetrexed fresenius kabi",
+                "trifluridine",
+                "nelarabine",
+                "gemcitabine eugia",
+                "atriance",
+                "onivyde",
+                "idarubicine chlorhydrate",
+                "eribulin eg",
+                "gimeracil",
+                "fludarabine teva",
+                "treosulfan",
+                "bleomycine hikma",
+                "mitomycin accord healthcare",
+                "doxorubicine teva",
+                "campto",
+                "gemcitabine fresenius kabi",
+                "cisplatin accord healthcare",
+                "paclitaxel eugia",
+                "eposin",
+                "thiotepa",
+                "tegafur, combinations",
+                "gemcitabine",
+                "fluracedyl",
+                "paclitaxel",
+                "celltop",
+                "epirubicin",
+                "oxaliplatin",
+                "raltitrexed",
+                "cisplatine teva",
+                "fluorouracil accord healthcare",
+                "azacitidine",
+                "cisplatin",
+                "vincristine sulfate",
+                "thiotepa riemser",
+                "docetaxel kabi",
+                "epirubicine teva",
+                "daunorubicin",
+                "cabazitaxel ever pharma",
+                "docetaxel accord",
+                "irinotecan kabi",
+                "vinblastine sulfate",
+                "capecitabine accord",
+                "oxaliplatine teva",
+                "trifluridine, combinations",
+                "oxaliplatin accord healthcare",
+                "doxorubicine chlorhydrate",
+                "tioguanine",
+                "paclitaxel hospira",
+                "vinorelbine sandoz",
+                "azacitidine kabi",
+                "etoposide",
+                "mitoxantrone sandoz",
+                "carboplatine fresenius kabi",
+                "epirubicine accord healthcare",
+                "busulfan fresenius kabi",
+                "cytarabine (en liposomes)",
+                "bendamustine",
+                "fludarabine",
+                "topotecan chlorhydrate",
+                "gemcitabine chlorhydrate",
+                "methotrexate",
+                "dacarbazine citrate",
+                "alkeran",
+                "carbosin",
+                "vinorelbin eugia",
+                "litak",
+                "chlorambucil",
+                "alimta",
+                "topotecan accord healthcare",
+                "carboplatin",
+                "fluorouracil",
+                "oxaliplatine",
+                "mitoxantrone chlorhydrate",
+                "bugvi",
+                "jevtana",
+                "cabazitaxel accord",
+                "bleomycin",
+                "mitoxantrone",
+                "tegafur",
+                "puri-nethol",
+                "abraxane",
+                "vincrisin",
+                "irinotecan sucrosofate (en liposomes pegyles)",
+                "doxorubicin accord healthcare",
+                "irinotecan accord",
+                "endoxan",
+                "gemcitabine hospira",
+                "azacitidin sandoz",
+                "melphalan",
+                "topotecan",
+                "tepadina",
+                "xeloda",
+                "epirubicine chlorhydrate",
+                "cytosar",
+                "bleomycine sulfate",
+                "vinorelbine accord healthcare",
+                "oxaliplatine fresenius kabi",
+                "paclitaxel fresenius kabi"
+            ]
+        },
+        "regex": {
+            "chimioth\u00e9rapie2": [
+                "[0-9]* cycles\\b",
+                "[0-9]* injections\\b",
+                "[0-9]* administrations\\b",
+                "[0-9]* cures\\b",
+                "\\bc[0-9]\\b",
+                "\\bc[0-9]j[0-9]\\b"
+            ]
+        },
+        "context_sents": 1,
+        "attr": "NORM"
+    },
+    "Anatomic pathology procedure (procedure)": {
+        "lf_name": "lf_regex_14",
+        "terms": {
+            "anatomopathologie": [
+                "anatomopathologie",
+                "histologie",
+                "histologique",
+                "anapath",
+                "adk",
+                "adenocarcinome", 
+                "adeocarcinome",
+                "aspect macroscopique",
+                "aspect microscopique",
+                "morphologique",
+                "tissu",
+                "lieberkuhnien"
+            ],
+            "autres":[
+                "breslow","gleason","sbr","grade"
+            ],
+            "cytologie": [
+                "cytologie",
+                "cytologique",
+                "cytopathologie"
+            ],
+            "immunohistochimie": [
+                "immunohistochimie",
+                "ihc"
+            ],
+            "biomarqueurs": [
+                "biomarqueurs",
+                "marqueurs biologiques",
+                "marqueurs tumoraux",
+                "ro",
+                "rp",
+                "her2",
+                "ki67",
+                "pdl1",
+                "alk",
+                "egfr",
+                "braf",
+                "kras",
+                "nras",
+                "ros1",
+                "cmet",
+                "ret",
+                "ntrk",
+                "brca1",
+                "brca2",
+                "psa",
+                "tpf",
+                "bd1",
+                "ttf"
+            ]
+        },
+        "context_sents": [
+            1,
+            3
+        ],
+        "attr": "NORM"
+    },
+    "Imaging (procedure)": {
+        "lf_name": "lf_regex_15",
+        "terms": {
+            "image": [
+                "scanner",
+                "angioscanner",
+                "imagerie",
+                "image"
+            ]
+        },
+        "context_sents": 1,
+        "attr": "NORM"
+    },
+    "Mammography (procedure)": {
+        "lf_name": "lf_regex_16",
+        "terms": {
+            "mammographie": [
+                "mammographie",
+                "echo sein",
+                "echographie mammaire"
+            ]
+        },
+        "context_sents": 1,
+        "attr": "NORM"
+    },
+    "Plain X-ray (procedure)": {
+        "lf_name": "lf_regex_17",
+        "terms": {
+            "radiographie": [
+                "radiographie",
+                "radio"
+            ]
+        },
+        "context_sents": 1,
+        "attr": "NORM"
+    },
+    "Nuclear medicine imaging procedure (procedure)": {
+        "lf_name": "lf_regex_18",
+        "terms": {
+            "scintigraphie": [
+                "scintigraphie"
+            ],
+            "autres": [
+                "mibg",
+                "octreoscan",
+                "scintigraphie",
+                "TEP"
+            ]
+        },
+        "context_sents": 1,
+        "attr": "NORM"
+    },
+    "Multidisciplinary meeting (procedure)": {
+        "lf_name": "lf_regex_19",
+        "terms": {
+            "rcp": [
+                "RCP",
+                "Concertation Pluridisciplinaire",
+                "concertation pluridisciplinaire"
+            ]
+        },
+        "context_sents": 1,
+        "attr": "TEXT"
+    },
+    "Gastrointestinal tract endoscopy (procedure)": {
+        "lf_name": "lf_regex_20",
+        "terms": {
+            "endoscopie": [
+                "endoscopie digestive",
+                "duodenoscopie"
+            ]
+        },
+        "context_sents": 1,
+        "attr": "NORM"
+    },
+    "Immunotherapy (procedure)": {
+        "lf_name": "lf_regex_21",
+        "terms": {
+            "immunotherapie": [
+                "immunotherapie"
+            ],
+            "drugs": [
+                "imnovid",
+                "cemiplimab",
+                "tabelecleucel",
+                "avelumab",
+                "relatlimab",
+                "teclistamab",
+                "lenalidomide mylan",
+                "tecvayli",
+                "talvey",
+                "talquetamab",
+                "lenalidomide krka",
+                "nivolumab",
+                "thalidomide bms",
+                "blinatumomab",
+                "pembrolizumab",
+                "monoclonal antibodies",
+                "lenalidomine chlorhydrate",
+                "lunsumio",
+                "tisagenlecleucel",
+                "pomalidomide viatris",
+                "ciltacabtagene autoleucel",
+                "pomalidomide",
+                "glofitamab",
+                "kymriah",
+                "lenalidomide",
+                "pomalidomide grindeks",
+                "yervoy",
+                "jemperli",
+                "tecartus",
+                "oncotice",
+                "opdivo",
+                "keytruda",
+                "other antineoplastic agents",
+                "tremelimumab",
+                "bavencio",
+                "dostarlimab",
+                "methoxsalen macopharma",
+                "brexucabtagene autoleucel",
+                "elranatamab",
+                "revlimid",
+                "lenalidomide chlorure d'ammonium",
+                "pomalidomide accord",
+                "ipilimumab",
+                "atezolizumab",
+                "axicabtagene ciloleucel",
+                "yescarta",
+                "tepkinly",
+                "bacilles calmette-guerin (souche tice)",
+                "lenalidomide eugia",
+                "imjudo",
+                "lenalidomide accord",
+                "carvykti",
+                "opdualag",
+                "lenalidomide eg",
+                "tevimbra",
+                "durvalumab",
+                "kimmtrak",
+                "thalidomide",
+                "mosunetuzumab",
+                "bacilles calmette-guerin (souche rivm)",
+                "bcg vaccine",
+                "blincyto",
+                "libtayo",
+                "lenalidomide grindeks",
+                "tislelizumab",
+                "tecentriq",
+                "pomalidomide eg",
+                "ebvallo",
+                "imfinzi",
+                "columvi",
+                "methoxsalene",
+                "elrexfio",
+                "epcoritamab",
+                "tebentafusp",
+                "bcg medac"
+            ]
+        },
+        "context_sents": 1,
+        "attr": "NORM"
+    },
+    "Hormone therapy (procedure)": {
+        "lf_name": "lf_regex_22",
+        "terms": {
+            "hormonotherapie": [
+                "hormonotherapie",
+                "therapie hormonale",
+                "hormonotherapie"
+            ],
+            "drugs": [
+                "letrozole eg",
+                "abiraterone",
+                "enzalutamide",
+                "anastrozole teva",
+                "anastrozole eg",
+                "bicalutamide",
+                "bixodalan",
+                "fulvestrant teva",
+                "erleada",
+                "tamoxifene citrate",
+                "exemestane",
+                "fulvestrant ever pharma",
+                "akeega",
+                "anastrozol sandoz",
+                "nubeqa",
+                "apalutamide",
+                "letrozol sandoz",
+                "tamoxifen",
+                "zytiga",
+                "tamoplex",
+                "abiraterone acetate",
+                "xtandi",
+                "bicalutamide eg",
+                "casodex",
+                "fulvestrant accord",
+                "anastrozole",
+                "abiraterone accord",
+                "abiraterone krka",
+                "abiraterone mylan",
+                "abirateron eg",
+                "letrozole",
+                "niraparib tosylate",
+                "fulvestrant sandoz",
+                "arimidex",
+                "letrozole teva",
+                "bicalutamide sandoz",
+                "darolutamide",
+                "tamoxifen sandoz",
+                "femara",
+                "exemestan sandoz",
+                "aromasin",
+                "nolvadex",
+                "fulvestrant"
+            ]
+        },
+        "context_sents": 1,
+        "attr": "NORM"
+    },
+    "Chemotherapy for malignant neoplastic disease using targeted agent (procedure)": {
+        "lf_name": "lf_regex_23",
+        "terms": {
+            "therapie_ciblee": [
+                "therapie ciblee"
+            ],
+            "drugs": [
+                "pazopanib",
+                "vargatef",
+                "vitrakvi",
+                "besponsa",
+                "axitinib",
+                "rozlytrek",
+                "kisqali",
+                "herceptin",
+                "trastuzumab emtansine",
+                "zelboraf",
+                "pemigatinib",
+                "rucaparib camsilate",
+                "darzalex",
+                "asciminib chlorhydrate",
+                "brukinsa",
+                "alecensa",
+                "dasatinib teva",
+                "ceritinib",
+                "qarziba",
+                "imatinib",
+                "tucatinib",
+                "isatuximab",
+                "lapatinib",
+                "binimetinib",
+                "tyverb",
+                "sunitinib",
+                "palbociclib",
+                "giotrif",
+                "bortezomib eg",
+                "velcade",
+                "momelotinib dichlorhydrate",
+                "polivy",
+                "sorafenib",
+                "enhertu",
+                "ponatinib",
+                "votrient",
+                "zydelig",
+                "mekinist",
+                "crizotinib",
+                "cabozantinib",
+                "imatinib krka",
+                "vemurafenib",
+                "perjeta",
+                "ninlaro",
+                "midostaurin",
+                "daratumumab",
+                "sunitinib teva",
+                "ribociclib succinate",
+                "odomzo",
+                "rixathon",
+                "osimertinib mesylate",
+                "koselugo",
+                "sutent",
+                "pemazyre",
+                "midostaurine",
+                "retsevmo",
+                "finlee",
+                "sorafenib eg",
+                "dasatinib",
+                "bortezomib",
+                "ibrutinib",
+                "lorviqua",
+                "brentuximab vedotine",
+                "encorafenib",
+                "nilotinib accord",
+                "everolimus eg",
+                "vegzelma",
+                "bosutinib eg",
+                "rituximab",
+                "imatinib mesilate",
+                "idelalisib",
+                "kadcyla",
+                "dasatinib viatris",
+                "gefitinib",
+                "lorlatinib",
+                "elotuzumab",
+                "mvasi",
+                "ibrance",
+                "nintedanib",
+                "capivasertib",
+                "caprelsa",
+                "abemaciclib",
+                "nintedanib esilate",
+                "selpercatinib",
+                "ivosidenib",
+                "quizartinib dichlorhydrate",
+                "ripretinib",
+                "jaypirca",
+                "atc absent",
+                "regorafenib",
+                "ruxience",
+                "inlyta",
+                "jakavi",
+                "lynparza",
+                "nilotinib eg",
+                "piqray",
+                "pertuzumab",
+                "glivec",
+                "ruxolitinib",
+                "ixazomib",
+                "qinlock",
+                "sorafenib sandoz",
+                "other antineoplastic agents",
+                "ogivri",
+                "brentuximab vedotin",
+                "mabthera",
+                "rydapt",
+                "spexotras",
+                "sunitinib malate",
+                "bevacizumab",
+                "nilotinib chlorhydrate",
+                "avastin",
+                "cotellic",
+                "truxima",
+                "ramucirumab",
+                "axitinib accord",
+                "tibsovo",
+                "ontruzant",
+                "vanflyta",
+                "erlotinib sandoz",
+                "axitinib eg",
+                "fruzaqla",
+                "cyramza",
+                "trazimera",
+                "selumetinib hydrogenosulfate",
+                "trametinib",
+                "lenvatinib mesilate",
+                "fedratinib dichlorhydrate",
+                "imatinib sandoz",
+                "truqap",
+                "iclusig",
+                "sonidegib phosphate",
+                "mogamulizumab",
+                "bosulif",
+                "xalkori",
+                "obinutuzumab",
+                "afinitor",
+                "verzenios",
+                "tepotinib chlorhydrate",
+                "xospata",
+                "larotrectinib sulfate",
+                "zirabev",
+                "ruxolitinib phosphate",
+                "trodelvy",
+                "bortezomib ever pharma",
+                "trastuzumab",
+                "lenvatinib",
+                "imatinib grindeks",
+                "erdafitinib",
+                "sorafenib tosylate",
+                "fruquintinib",
+                "bortezomib accord",
+                "pazopanib chlorhydrate",
+                "inotuzumab ozogamicin",
+                "cabozantinib malate",
+                "dabrafenib mesilate",
+                "stivarga",
+                "cobimetinib hemifumarate",
+                "polatuzumab vedotine",
+                "pirtobrutinib",
+                "cabometyx",
+                "nexavar",
+                "tukysa",
+                "empliciti",
+                "inrebic",
+                "dinutuximab beta",
+                "niraparib tosylate",
+                "zercepac",
+                "imbruvica",
+                "herzuma",
+                "gazyvaro",
+                "alectinib chlorhydrate",
+                "erlotinib",
+                "zejula",
+                "dabrafenib",
+                "talazoparib tosylate",
+                "mylotarg",
+                "rubraca",
+                "gemtuzumab ozogamicine",
+                "lapatinib ditosylate",
+                "brigatinib",
+                "iressa",
+                "oyavas",
+                "afatinib dimaleate",
+                "sprycel",
+                "kisplyx",
+                "sarclisa",
+                "sunitinib sandoz",
+                "olaparib",
+                "tafasitamab",
+                "cetuximab",
+                "everolimus",
+                "ponatinib chlorhydrate",
+                "gefitinib sandoz",
+                "pazopanib accord",
+                "erlotinib chlorhydrate",
+                "braftovi",
+                "entrectinib",
+                "erbitux",
+                "vemurafenib (coprecipite)",
+                "abevmy",
+                "acalabrutinib",
+                "omjjara",
+                "kyprolis",
+                "panitumumab",
+                "phesgo",
+                "vectibix",
+                "padcev",
+                "zanubrutinib",
+                "adcetris",
+                "alpelisib",
+                "minjuvi",
+                "calquence",
+                "bortezomib boronate de mannitol",
+                "abemaciclib ",
+                "carfilzomib",
+                "enfortumab vedotine",
+                "trastuzumab deruxtecan",
+                "zykadia",
+                "balversa",
+                "ixazomib citrate",
+                "imatinib accord",
+                "lenvima",
+                "imatinib teva",
+                "vandetanib",
+                "tafinlar",
+                "sacituzumab govitecan",
+                "votubia",
+                "trametinib dimethylsulfoxyde",
+                "gefitinib accord",
+                "poteligeo",
+                "scemblix",
+                "alunbrig",
+                "tagrisso",
+                "tepmetko",
+                "erivedge",
+                "gilteritinib fumarate",
+                "nilotinib",
+                "vismodegib",
+                "ribociclib",
+                "sunitinib eg",
+                "mektovi",
+                "talzenna",
+                "dinutuximab",
+                "bosutinib",
+                "inotuzumab ozogamicine",
+                "tasigna"
+            ]
+        },
+        "context_sents": 1,
+        "attr": "NORM"
+    }
+}

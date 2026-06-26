@@ -1,0 +1,40 @@
+general:
+    path_patterns_contextual_qualifier: "~/wedsak/config/patterns.json"
+    path_codes_definition: "~/wedsak/data/LF_definition.xlsx"
+    path_prompts: "~/wedsak/config/prompts.json"
+    context_getter: "words[-75:75]"
+    path_logical_relations: "~/wedsak/config/logical_relations.json"
+    task_ids:
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+        - 6
+        - 7
+        - 8
+        - 9
+        - 10
+        - 11
+        - 12
+        - 13
+        - 14
+        - 15
+        - 16
+        - 17
+        - 18
+        - 19
+        - 20
+        - 21
+        - 22
+        - 23
+        
+llm_lf:
+    prompt_ids:
+        16 : "1"
+        23 : "2"
+    default_prompt_id: "0"
+    max_concurrent_requests: 20
+    batch_size: "24 docs"
+
+        

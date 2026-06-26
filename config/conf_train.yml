@@ -1,0 +1,104 @@
+retrieve_external_knowledge:
+    path_cohort: "~/wedsak/data/dataset/train/train_notes.pickle"
+    path_save_ek: "~/wedsak/data/dataset/train/ek_train.pickle"
+    path_codes_definition: ${general.path_codes_definition}
+    db: "cse250022_20260206_143905937275"
+
+lf_no_llm:
+    path_notes: ${retrieve_external_knowledge.path_cohort}
+    path_external_knowledge: ${retrieve_external_knowledge.path_save_ek}
+    path_patterns_contextual_qualifier: ${general.path_patterns_contextual_qualifier}
+    path_logical_relation_qualifier: ${general.path_logical_relations}
+    path_save_votes: "~/wedsak/data/dataset/train/votes_no_llm.pickle"
+
+llm_lf:
+    task_ids: ${general.task_ids}
+    path_notes: ${retrieve_external_knowledge.path_cohort}
+    path_prompts: ${general.path_prompts}
+    path_save_votes: "~/wedsak/data/dataset/train/votes_llm_qwen.pickle"
+    context_getter: ${general.context_getter}
+    model_names:
+        # "google/medgemma-27b-text-it": "http://localhost:8003/v1"
+        "Qwen/Qwen3-8B": "http://localhost:8002/v1"
+
+    
+merge_lf_results:
+    lf_path_results: 
+    - ${lf_no_llm.path_save_votes} 
+    # - ${llm_lf.path_save_votes}
+    - "~/wedsak/data/dataset/train/votes_llm_qwen.pickle"
+    - "~/wedsak/data/dataset/train/votes_llm_medgemma.pickle"
+    path_save_votes: "~/wedsak/data/dataset/train/votes.pickle"
+    
+label_model:
+    task_ids: ${general.task_ids}
+    path_lf_votes_train: ${merge_lf_results.path_save_votes} 
+    path_save_labels_train: "~/wedsak/data/dataset/train/labels_train_task_{task_id}.pickle"
+    path_lf_votes_dev: "~/wedsak/data/dataset/dev/votes.pickle"
+    path_docs_dev: "~/wedsak/data/annotation/dev/sample_annotated.pickle" # FIXME
+    path_annotations_dev: "~/wedsak/data/annotation/dev/annotated_processed_dates.pickle"
+    path_metrics_label_model: "~/wedsak/data/label_model_metrics/"
+    fillnone_as_negative: False
+    min_support_dev: 1
+    abstention_value: 0
+    negative_value: 1
+    positive_value: 2
+    label_model_protocol:
+        "@label_model": "MetalLabelModel"
+
+    
+data_selection:
+    path_train_labels: "~/wedsak/data/dataset/train/votes_llm_medgemma.pickle" # ${label_model.path_save_labels_train}
+    task_ids: ${general.task_ids}
+    path_docs_train: ${retrieve_external_knowledge.path_cohort}
+    strategy: "one_dataset_for_all_tasks"
+    path_train_dataset: "~/wedsak/data/dataset/train/all_tasks/"
+    # suffix_task_name: "_medgemma_27b_text_it"
+
+    
+train:
+    model_name: "all_tasks_weights"
+    path_evaluation_dataset: "/export/home/cse250022/wedsak/data/annotation/dev/docs"
+    batch_size: 32
+    task_ids: ${general.task_ids}
+    max_steps: 1000
+    context_getter: "words[-150:300]"
+    warmup_rate: 0.1
+    path_to_training_datasets: 
+        # - "/export/home/cse250022/wedsak/data/annotation/dev/docs"
+        - ${data_selection.path_train_dataset}
+    lr_transformer: 1e-4
+    lr_span_classifier: 5e-5
+    path_embedding: "almanach/camembertav2-base" # "almanach/moderncamembert-base" # "almanach/camembertav2-base" # "camembert/camembert-large"
+    use_lrt: False
+    initial_delta_lrt: 4
+    last_delta_lrt: 5
+    step_min_lrt: 130
+    step_max_lrt: 300
+    path_dir_save_model: "~/wedsak/data/models/"
+    save_corrected_targets: False
+    embedding_params:
+        window: 2048
+        stride: 1024
+    dropout_span_classifier: 0
+    # shuffle: "fragment"
+    # label_weights:
+    #     enrollment_in_clinical_trial_procedure:
+    #         "0": 1
+    #         "1": 30
+    #     plain_x_ray_procedure:
+    #         "0": 1
+    #         "1": 30
+    #     esophagogastroduodenoscopy_procedure:
+    #         "0": 1
+    #         "1": 30
+    #     hormone_therapy_procedure:
+    #         "0": 1
+    #         "1": 30
+
+    
+    
+
+    
+
+

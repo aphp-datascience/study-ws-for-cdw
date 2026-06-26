@@ -1,0 +1,68 @@
+# Autres
+mermaid_charts.md
+workflow.md
+notebooks/retrieve_data/Retrieve_External_Knowledge_Apply_LFs.py
+config/prompt_dev.json
+notebooks/dev/
+run_label_modelling.sh
+scripts/_label_modelling.py
+spark_submit.sh
+
+# spaCy data
+/corpus
+/training
+/packages
+/assets
+/project.lock
+
+# Env/IDE
+.venv
+.venv2
+.vscode
+
+# Cache dirs
+__pycache__
+.mypy_cache
+.ipynb_checkpoints
+
+# Data
+*.ipynb
+*.csv
+*.pkl
+*.jsonl
+*.html
+*.log
+*.xml
+*.ckpt
+data/
+*.pickle
+*.pt
+metastore_db/
+spark-warehouse/
+*__target__/
+# Environments
+*.tar.gz
+
+# Ignore IntelliJ IDEA
+.idea/
+*.iml
+
+# Documentation
+_build/
+
+# Python
+*.egg-info
+build
+logs
+.hypothesis
+.coverage*
+
+# Models
+models/
+*.dill
+
+# build
+dist/
+
+# Ignore files
+backup_uv.lock

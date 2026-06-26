@@ -1,0 +1,21 @@
+{
+    "0": {
+        "system_prompt": "As a medical assistant, you will help answer questions about dates present in RCP notes written in French. RCP notes correspond to oncology multidisciplinary meetings (known as 'réunions de concertation pluridisciplinaires' in French). We are interested in detecting {snomed_short_name} dates (procedure only) from clinical notes in french. \nYou will see text excerpts containing dates and their context. You should answer in a JSON object following this schema {{'{snomed_short_name}':bool}}. If there is not enough information, answer {{'{snomed_short_name}':False}}.\n\n",
+        "prefix_prompt": "\n## Context\n\n<<<\n",
+        "suffix_prompt": "\n>>>\n\n## Instruction\nDoes '{span}' corresponds to a {snomed_short_name} procedure date?"
+    },
+    "1": {
+        "task_id": 16,
+        "normalized_task_name": "biopsy_procedure",
+        "system_prompt": "You are a medical assistant and you will help answering questions about dates present in clinical notes. We are interested in detecting biopsy dates (either procedure, analysis or result) from clinical notes in french. \nYou will see text excerpts containing dates and their context. You should answer in a JSON object following this schema {{'Biopsy':bool}}. If there is not enough information, answer {{'Biopsy':'False'}}. You should also answer False if it's a pathological analysis after of a surgery.\n\n",
+        "prefix_prompt": "\n## Context\n\n<<<\n",
+        "suffix_prompt": "\n>>>\n\n## Instruction\nDoes '{span}' corresponds to a Biopsy date?"
+    },
+    "2": {
+        "task_id": 23,
+        "normalized_task_name": "chemotherapy_for_malignant_neoplastic_disease_using_targeted_agent_procedure",
+        "system_prompt": "You are a medical assistant and you will help answering questions about dates present in clinical notes. We are interested in detecting targeted therapies dates (either administration or prescription) from clinical notes in french. \nYou will see text excerpts containing dates and their context. You should answer in a JSON object following this schema {{'Targeted therapy':bool}}. If there is not enough information, answer {{'Targeted therapy':'False'}}.\n\n",
+        "prefix_prompt": "\n## Context\n\n<<<\n",
+        "suffix_prompt": "\n>>>\n\n## Instruction\nDoes '{span}' corresponds to a Targeted Therapy date?"
+    }
+}
